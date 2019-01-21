@@ -16,4 +16,13 @@ feature 'attack' do
 		expect(page).to have_content "Eduardo's Turns"
 	end
 
+	scenario 'player 2 can reduce hp of player 1'do
+		sign_in_and_play
+		click_button 'Attack'
+		click_button 'OK'
+		click_button 'Attack'
+		click_button 'OK'
+		expect(page).not_to have_content 'karel: 40 hp'
+		expect(page).to have_content 'Karel: 30 HP'
+	end
 end
