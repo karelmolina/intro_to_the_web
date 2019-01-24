@@ -5,3 +5,9 @@ def sign_in_and_play
   fill_in 'player_2_name', with: 'Eduardo'
   click_on 'submit'
 end
+
+
+def attacking
+  click_button 'Attack'
+  click_button 'OK'
+end
